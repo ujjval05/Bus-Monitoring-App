@@ -37,19 +37,21 @@ function App() {
   return (
     <Router>
       <Navbar />
-      <div className="p-6">
-        <Routes>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/track" element={<TrackBus />} />
-          <Route path="/checkin" element={<StudentCheckIn />} />
-          <Route path="/alerts" element={<Notifications />} />
-          <Route path="/admin" element={
-            <PrivateRoute>
-              <AdminPanel />
-            </PrivateRoute>
-          } />
-          <Route path="/login" element={<Login />} />
-        </Routes>
+      <div className="min-h-screen flex justify-center items-center bg-gray-100 p-4">
+        <div className="w-full max-w-md">
+          <Routes>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/track" element={<TrackBus />} />
+            <Route path="/checkin" element={<StudentCheckIn />} />
+            <Route path="/alerts" element={<Notifications />} />
+            <Route path="/admin" element={
+              <PrivateRoute>
+                <AdminPanel />
+              </PrivateRoute>
+            } />
+            <Route path="/login" element={<Login />} />
+          </Routes>
+        </div>
       </div>
     </Router>
   );
